@@ -9,7 +9,6 @@ $path = '/orders/v1/status/'.$invoice;
 $timestamp      = date('Y-m-d\TH:i:s\Z');
 $abc 			= 'Client-Id:'.$clientId."\n".'Request-Id:'.$requestId."\n".'Request-Timestamp:'.$timestamp."\n".'Request-Target:'.$path;
 echo $abc.'<br>';
-//$secret		= 'SK-vyCJdZV2jPuv4Mo8lWB5';
 $signature  = base64_encode(hash_hmac('sha256', $abc, $secretKey, true));
 $header = 'HMACSHA256='.$signature;
 echo $signature.'<br>';
