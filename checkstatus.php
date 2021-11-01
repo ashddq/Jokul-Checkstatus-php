@@ -1,9 +1,9 @@
 <?php
-$clientId = '***********'; // Change with your Client ID
-$secretKey = '***********'; // Change with your Secret Key 
-$invoice = '1234';
+$clientId = $_POST['clientId']; 
+$secretKey = $_POST['secretKey'];
+$invoice = $_POST['invoice'];
 $requestId = rand(1, 100000);
-date_default_timezone_set("Atlantic/Azores");
+date_default_timezone_set('UTC');
 $url = 'https://api-sandbox.doku.com';
 $path = '/orders/v1/status/'.$invoice;
 $timestamp      = date('Y-m-d\TH:i:s\Z');
