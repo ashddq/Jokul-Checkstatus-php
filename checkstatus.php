@@ -102,22 +102,22 @@ $amount = $hasil['order']['amount'];
     </style>
   </head>
   <body>
-  <section class="about" id="about">
+  <section class="result" id="result">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row mb-2">
           <div class="col text-center">
-            <h2>Invoice Number : <?= $invoicenumber ?></h2><br/>
-            <h2>Payment Channel : <?= $paymentchannel ?></h2><br/>
-            <h2>Date : <?= $waktutransaksi ?></h2><br/>
-            <h2>Amount : <?= $amount ?></h2><br/>
-            <h2>Status : <?= $sts ?></h2><br/>
+            <h2>Invoice Number : <?= $invoicenumber ?></h2>
+            <h2>Payment Channel : <?= $paymentchannel ?></h2>
+            <h2>Date : <?= $waktutransaksi ?></h2>
+            <h2>Amount : <?= $amount ?></h2>
+            <h2>Status : <?= $sts ?></h2>
           </div>
         </div>
         </div>
       </div>
       <a href="index.html"><button type="submit">Check Status</button></a>
       <div class="container" style="background-color: #eee">
-        <label> <center>@ashddq<a href="https://www.instagram.com/ashddq"></a></center>
+        <label> <center><a href="https://www.instagram.com/ashddq">@ashddq</a></center>
     </section>
   </body>
 </html>
