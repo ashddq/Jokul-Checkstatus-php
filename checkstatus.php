@@ -38,7 +38,10 @@ $sts = $hasil['transaction']['status'];
 $invoicenumber = $hasil['order']['invoice_number'];
 $paymentchannel = $hasil['channel']['id'];
 $waktutransaksi = $hasil['transaction']['date'];
+$waktutransaksi7 = date('h:i:s d-m-Y', strtotime($waktutransaksi.'+7 hours'));
 $amount = $hasil['order']['amount'];
+$failed = $hasil['error']['code'];
+
 ?>
 
 <!DOCTYPE html>
@@ -104,16 +107,28 @@ $amount = $hasil['order']['amount'];
   <body>
   <section class="result" id="result">
       <div class="container">
+      <?php if ($sts == "SUCCESS"){ ?>
         <div class="row mb-2">
           <div class="col text-center">
-            <h2>Invoice Number : <?= $invoicenumber ?></h2>
-            <h2>Payment Channel : <?= $paymentchannel ?></h2>
-            <h2>Date : <?= $waktutransaksi ?></h2>
-            <h2>Amount : <?= $amount ?></h2>
-            <h2>Status : <?= $sts ?></h2>
+          <h1>Status Transaksi</h1>
+            <h3>Invoice Number : <?= $invoicenumber ?></h3>
+            <h3>Payment Channel : <?= $paymentchannel ?></h3>
+            <h3>Date : <?= $waktutransaksi7 ?></h3>
+            <h3>Amount : <?= $amount ?></h3>
+            <h3>Status : <?= $sts ?></h3>
           </div>
         </div>
         </div>
+        <?php }else{?>
+        <div class="row mb-2">
+          <div class="col text-center">
+          <h1>Status Transaksi</h1>
+            <h3>Status : <?= $failed ?></h3>
+            <h3>Please enter the correct invoice number</h3>
+          </div>
+        </div>
+        </div>
+        <?php } ?>
       </div>
       <a href="index.html"><button type="submit">Check Status</button></a>
       <div class="container" style="background-color: #eee">
