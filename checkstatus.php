@@ -96,7 +96,6 @@ $failed = $hasil['error']['code'];
       padding-top: 0;
       padding-right: 15px;
       }
-      /* Change styles for span on extra small screens */
       @media screen and (max-width: 300px) {
       span.psw {
       display: block;
@@ -119,7 +118,19 @@ $failed = $hasil['error']['code'];
           </div>
         </div>
         </div>
-        <?php }else{?>
+        <?php }else if($sts == "FAILED"){?>
+          <div class="row mb-2">
+          <div class="col text-center">
+          <h1>Status Transaksi</h1>
+            <h3>Invoice Number : <?= $invoicenumber ?></h3>
+            <h3>Payment Channel : <?= $paymentchannel ?></h3>
+            <h3>Date : <?= $waktutransaksi7 ?></h3>
+            <h3>Amount : <?= $amount ?></h3>
+            <h3>Status : <?= $sts ?></h3>
+          </div>
+        </div>
+        </div>
+        <?php }else{ ?>
         <div class="row mb-2">
           <div class="col text-center">
           <h1>Status Transaksi</h1>
